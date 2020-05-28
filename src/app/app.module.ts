@@ -10,6 +10,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignOutComponent } from './sign-out/sign-out.component';
 import { SignContractComponent } from './sign-contract/sign-contract.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SignContractComponent } from './sign-contract/sign-contract.component';
     HomePageComponent,
     SignInComponent,
     SignOutComponent,
-    SignContractComponent
+    SignContractComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
