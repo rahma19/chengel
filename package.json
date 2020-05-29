@@ -20,11 +20,8 @@
     "@angular/platform-browser-dynamic": "~8.2.14",
     "@angular/router": "~8.2.14",
     "bootstrap": "^4.5.0",
-<<<<<<< HEAD
     "mdbootstrap": "^4.19.0",
-=======
     "bulma": "^0.8.2",
->>>>>>> 5cb5ef8463d04d5507286927276da0f00858d03a
     "rxjs": "~6.4.0",
     "tailwindcss": "^1.4.6",
     "tslib": "^1.10.0",
