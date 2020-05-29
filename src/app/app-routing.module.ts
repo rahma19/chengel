@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: "homePage", component: HomePageComponent },
   { path: "signContract", component: SignContractComponent },
   { path: "singIn", component: SignInComponent },
-  { path: "", redirectTo: "login", pathMatch: "full" },
+  { path: "", redirectTo: "homePage", pathMatch: "full" },
   { path: "addOrders", component: AddOrdersComponent },
   { path: "jobOrders", component: JobordersComponent },
   { path: "workers", component: WorkersComponent },
