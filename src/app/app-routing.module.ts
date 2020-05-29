@@ -1,5 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomePageComponent } from './home-page/home-page.component';
+import { SignContractComponent } from './sign-contract/sign-contract.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { LoginComponent } from './login/login.component';
+import { AddOrdersComponent } from './add-orders/add-orders.component';
+import { JobordersComponent } from './joborders/joborders.component';
+import { WorkersComponent } from './workers/workers.component';
+import { ErrorComponent } from './error/error.component';
 
 
 const routes: Routes = [

@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a [routerLink]="['/homePage']" class="navbar-brand"
+    ><img src="../assets/bird.png" width="60px" height="55px"
+  /></a> 
+  
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLinkActive="actif" [routerLink]="['/homePage']"
+                  >Home</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" routerLinkActive="actif" [routerLink]="['/jobOrders']"
+                  >jobOrders</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" routerLinkActive="actif" [routerLink]="['/workers']"
+                  >workers</a>
+              </li>
+        </ul>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="actif" [routerLink]="['/login']" >Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="actif" [routerLink]="['/singIn']" >Register</a>
+            </li>
+        </ul>
+    </div>
+</nav>
