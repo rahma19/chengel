@@ -1,4 +1,58 @@
-#selectt{
+.bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://img.freepik.com/free-photo/cropped-shot-simple-workspace-with-blank-screen-computer-white-table-with-blurred-office-room-background_67155-5437.jpg?size=626&ext=jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Numans', sans-serif;
+    }
+.selectt{
     width:300px;
     height:62px;
 }
+#payment{
+   margin-top: 20px;;
+
+    
+}
+#textt{
+    font-weight: bold;
+    font-family : Arial, Helvetica, sans-serif;
+    font-size:11px;
+    color:gray;
+
+}
+
+.boutton{
+    display:inline-block;
+    width:200px;
+    padding:10px;
+    background-color:#8258FA;
+    color:#fff;
+    text-decoration: none;
+    text-align: center;
+    position: relative;
+    margin-left:600px;
+  }
+  .boutton::after,
+  .boutton::before{
+    content:'';
+    position: absolute;
+    width:20px;
+    height: 3px;
+    background-color: inherit;
+    transition: .5s;
+  }
+  .boutton::before{
+    left:0;
+    top:-5px;
+  }
+  .boutton::after{
+    right:0;
+    bottom: -5px;
+  }
+  .boutton:hover:after,
+  .boutton:hover:before{
+    width: 100%;
+  }
