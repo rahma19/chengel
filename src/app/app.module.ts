@@ -13,6 +13,12 @@ import { SignContractComponent } from './sign-contract/sign-contract.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { ErrorComponent } from './error/error.component';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -28,10 +34,11 @@ import { ErrorComponent } from './error/error.component';
     MenuComponent,
     ErrorComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
+  imports: [    
+    AngularFireModule.initializeApp(environment.firebase, 'my-app-name'),
+    BrowserModule,AngularFireDatabaseModule,
+    AppRoutingModule,AngularFirestoreModule,
+    FormsModule,AngularFireStorageModule,AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
