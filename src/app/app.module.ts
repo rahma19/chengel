@@ -13,16 +13,13 @@ import { SignContractComponent } from './sign-contract/sign-contract.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { ErrorComponent } from './error/error.component';
-<<<<<<< HEAD
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-=======
 import { JobordersComponent } from './joborders/joborders.component';
->>>>>>> 04fbaeb4b8ef6b0341aa2f93d824aab5a8c90730
 
 @NgModule({
   declarations: [
