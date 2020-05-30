@@ -13,6 +13,7 @@ import { SignContractComponent } from './sign-contract/sign-contract.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { ErrorComponent } from './error/error.component';
+import { JobordersComponent } from './joborders/joborders.component';
 
 @NgModule({
   declarations: [
