@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { JobordersComponent } from './joborders/joborders.component';
+
 import { WorkersComponent } from './workers/workers.component';
 import { AddOrdersComponent } from './add-orders/add-orders.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -18,6 +18,7 @@ import { ErrorComponent } from './error/error.component';
   declarations: [
     AppComponent,
     JobordersComponent,
+
     WorkersComponent,
     AddOrdersComponent,
     HomePageComponent,
