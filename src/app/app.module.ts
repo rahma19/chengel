@@ -8,7 +8,7 @@ import { WorkersComponent } from './workers/workers.component';
 import { AddOrdersComponent } from './add-orders/add-orders.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SignInComponent } from './sign-in/sign-in.component';
-/*import { SignOutComponent } from './sign-out/sign-out.component';*/
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { SignContractComponent } from './sign-contract/sign-contract.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
@@ -41,7 +41,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireModule.initializeApp(environment.firebase, 'my-app-name'),
     BrowserModule,AngularFireDatabaseModule,MultiSelectModule,
     AppRoutingModule,AngularFirestoreModule,BrowserAnimationsModule,
-    FormsModule,AngularFireStorageModule,AngularFireAuthModule
+    FormsModule,AngularFireStorageModule,AngularFireAuthModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
