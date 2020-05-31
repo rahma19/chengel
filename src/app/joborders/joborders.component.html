@@ -1,3 +1,22 @@
-<div *ngFor="let t of hehe">
+<!--<div *ngFor="let t of hehe">
 {{t.nom}}
-</div>
+</div>-->
+<div class="search-container" style="margin-top: 10px;">
+    <input type="text" id="search-bar" placeholder="Find an order">
+    <a href="#" class="search-icon">
+        <i class="fa fa-search"></i>
+    </a>
+</div> 
+<div class="wrapper" style="margin-top: 20px;">
+<div class="box">
+    <div>
+    <div style="border: 1px solid black;margin: 20px;width:220px;padding: 20px;">
+        <h3>For only pro</h3>
+        <p-multiSelect  [options]="cities" [(ngModel)]="selectedCities" [filter]="true" filterBy="label,value.name"></p-multiSelect>
+    
+    </div></div>
+    <div><div style="border: 1px solid black;margin: 20px;width:800px;padding: 20px;">
+        <h3 class="text-success">Found 910 orders</h3>    
+    </div></div>
+    
+</div></div>

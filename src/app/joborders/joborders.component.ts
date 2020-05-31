@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { DataService } from '../data.service';
+import {SelectItem} from 'primeng/api';
 
 @Component({
   selector: 'app-joborders',
@@ -11,8 +12,17 @@ import { DataService } from '../data.service';
 export class JobordersComponent implements OnInit {
 test:Observable<any[]>;
 hehe=[];
+selectedCities: any[];
+cities: SelectItem[];
   constructor(private db:AngularFireDatabase,private dataService:DataService) { 
     this.test=db.list('test').valueChanges();
+    this.cities= [
+      {label:'New York', value:{id:1, name: 'New York', code: 'NY'}},
+      {label:'Rome', value:{id:2, name: 'Rome', code: 'RM'}},
+      {label:'London', value:{id:3, name: 'London', code: 'LDN'}},
+      {label:'Istanbul', value:{id:4, name: 'Istanbul', code: 'IST'}},
+      {label:'Paris', value:{id:5, name: 'Paris', code: 'PRS'}}
+  ];
   }
 
   ngOnInit() {

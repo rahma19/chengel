@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import {MultiSelectModule} from 'primeng/multiselect';
 import { WorkersComponent } from './workers/workers.component';
 import { AddOrdersComponent } from './add-orders/add-orders.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -20,6 +20,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { JobordersComponent } from './joborders/joborders.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -38,8 +39,8 @@ import { JobordersComponent } from './joborders/joborders.component';
   ],
   imports: [    
     AngularFireModule.initializeApp(environment.firebase, 'my-app-name'),
-    BrowserModule,AngularFireDatabaseModule,
-    AppRoutingModule,AngularFirestoreModule,
+    BrowserModule,AngularFireDatabaseModule,MultiSelectModule,
+    AppRoutingModule,AngularFirestoreModule,BrowserAnimationsModule,
     FormsModule,AngularFireStorageModule,AngularFireAuthModule
   ],
   providers: [],
