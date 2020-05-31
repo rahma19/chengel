@@ -2,18 +2,18 @@
 <h1>Add Order</h1>
 <hr>
 <div class="container">
-<form >
+<form #f="ngForm">
 <div class="form-row">
 <div class="col-md-4 mb-3">
-<label for="validationServer013">Title</label>
-<input type="text" class="form-control is-valid" id="validationServer013" placeholder="What need to do ? "
-  required>
+<label for="id">Title</label>
+<input type="text" class="form-control" id="id, title" name="id" [(ngModel)]="iden" placeholder="What need to do ? "
+  required #identif="ngModel">
 
 </div>
 <div class="col-md-4 mb-3">
-<label for="validationServer023">Description</label>
-<textarea type="text" class="form-control is-valid" id="validationServer023" placeholder="describe the task in detail"
- required></textarea>
+<label for="des">Description</label>
+<textarea type="text" class="form-control" id="des" name="des" [(ngModel)]="desc" placeholder="describe the task in detail"
+ required #descrip="ngModel"></textarea>
 
 </div>
 <div class="col-md-4 mb-3">
@@ -85,17 +85,19 @@
 <div>
 <div class="form-row">
   <div class="col-md-4 mb-3">
-  <label for="validationServer013">Email</label>
-  <input type="text" class="form-control is-valid" id="validationServer013" placeholder="Email"
-    required>
+  <label for="mail">Email</label>
+  <input type="text" class="form-control" id="mail" placeholder="Email" name="mail" [(ngModel)]="mail"
+    required #email="ngModel">
+    <div *ngIf="email.invalid && email.dirty" class="alert alert-danger">Email invalid</div>
 </div>
 </div>
 
 <div class="form-row">
   <div class="col-md-4 mb-3">
-  <label for="validationServer013">Name</label>
-  <input type="text" class="form-control is-valid" id="validationServer013" placeholder="Your name"
-    required>
+  <label for="name">Name</label>
+  <input type="text" class="form-control" id="name" placeholder="Your name" name="name" [(ngModel)]="name"
+    required #nom="ngModel">
+    <div *ngIf="nom.invalid && nom.touched" class="alert alert-danger">Required field</div>
 </div>
 </div>
 </div>
@@ -111,9 +113,9 @@
 You must agree before submitting.
 </div>
 </div>
-
+<button type="submit" [disabled]="f.invalid" class="boutton">Add Order</button>
 </form></div>
-<a href="#" class="boutton">Add Order</a>
+
 
 
 
