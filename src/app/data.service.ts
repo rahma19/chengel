@@ -6,10 +6,22 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 })
 export class DataService {
   restlist:AngularFireList<any>;
-
-  constructor(private friebase: AngularFireDatabase) { }
+  orderslist:AngularFireList<any>;
+  constructor(private firebase: AngularFireDatabase) { }
   getRest(){
-    this.restlist=this.friebase.list('/test');
+    this.restlist=this.firebase.list('/test');
     return this.restlist;
+  }
+  insertOrder(f){
+    console.log(f.name);
+    this.orderslist.push({
+     title:f.title,
+     des:f.des,
+     date:f.date,
+     domaine:f.domaine,
+     price:f.price,
+     mail:f.mail,
+     name:f.name
+    });
   }
 }

@@ -2,17 +2,17 @@
 <h1>Add Order</h1>
 <hr>
 <div class="container">
-<form #f="ngForm">
+<form #f="ngForm" (ngSubmit)="showSuccess(f)">
 <div class="form-row">
 <div class="col-md-4 mb-3">
-<label for="id">Title</label>
-<input type="text" class="form-control" id="id, title" name="id" [(ngModel)]="iden" placeholder="What need to do ? "
-  required #identif="ngModel">
+<label for="title">Title</label>
+<input type="text" class="form-control" id="title, title" name="title" [(ngModel)]="title" placeholder="What need to do ? "
+  required #titre="ngModel">
 
 </div>
 <div class="col-md-4 mb-3">
 <label for="des">Description</label>
-<textarea type="text" class="form-control" id="des" name="des" [(ngModel)]="desc" placeholder="describe the task in detail"
+<textarea type="text" class="form-control" id="des" name="des" [(ngModel)]="des" placeholder="describe the task in detail"
  required #descrip="ngModel"></textarea>
 
 </div>
@@ -20,13 +20,13 @@
 <label for="validationServerUsername33">Application Acceptance</label>
 <div class="input-group">
  
-    <select class="btn btn-dark dropdown-toggle, selectt">
+    <select class="btn btn-dark dropdown-toggle, selectt" name="date" [(ngModel)]="date">
         <option value="" disabled selected>Choose your option</option>
-        <option value="1">3 days</option>
-        <option value="2">1 week</option>
-        <option value="3">2 weeks</option>
-        <option value="3">1 month</option>
-        <option value="3">termlessly</option>
+        <option value="3 days">3 days</option>
+        <option value="1 week">1 week</option>
+        <option value="2 weeks">2 weeks</option>
+        <option value="1 month">1 month</option>
+        <option value="termlessly">termlessly</option>
       </select>
   
  
@@ -36,15 +36,16 @@
 <div class="form-row">
 <div class="col-md-6 mb-3">
 <label for="validationServer033">Specialization</label>
-<select class="btn btn-dark dropdown-toggle, selectt">
-  <option value="1">Web Development</option>
+<select class="btn btn-dark dropdown-toggle, selectt" name="domaine" [(ngModel)]="domaine">
+  <!--<option value="1">Web Development</option>
   <option value="2">Design</option>
   <option value="3">Programming</option>
   <option value="4">Optimization (SEO)</option>
   <option value="5">Polygraphy</option>
   <option value="3">3D Graphics</option>
   <option value="4">Ads / Marketing</option>
-  <option value="5">Architecture</option>
+  <option value="5">Architecture</option>-->
+  <option *ngFor="let c of domaines" [ngValue]="c" [selected]="c.value">{{c.dmn}}</option>
 </select>
 
 
@@ -81,7 +82,14 @@
   <button class="btn btn-outline-dark">Company</button>
   </div>
 </div>
-
+<div class="form-row">
+  <div class="col-md-4 mb-3">
+  <label for="mail">Price</label>
+  <input type="text" class="form-control" id="price" placeholder="price" name="price" [(ngModel)]="price"
+    required #prc="ngModel">
+    <div *ngIf="prc.invalid && prc.dirty" class="alert alert-danger">Price invalid</div>
+</div>
+</div>
 <div>
 <div class="form-row">
   <div class="col-md-4 mb-3">
@@ -113,9 +121,9 @@
 You must agree before submitting.
 </div>
 </div>
-<button type="submit" [disabled]="f.invalid" class="boutton">Add Order</button>
+<button type="submit"  class="boutton">Add Order</button>
 </form></div>
-
+<!-- [disabled]="f.invalid"-->
 
 
 
