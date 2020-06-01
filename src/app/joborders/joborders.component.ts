@@ -33,12 +33,13 @@ cities: SelectItem[];
       nom:'reuhmeuuu'
     });
     */
-   this.db.list('orders').push({
+  /* this.db.list('orders').push({
     title:'dev',
     price:1200,
     description:'blabla',
-    date:'3days'
-  });
+    date:'3days'*/
+  
+
 
     
 
