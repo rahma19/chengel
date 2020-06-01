@@ -12,7 +12,8 @@
     height:62px;
 }
 #payment{
-   margin-top: 20px;;  
+   margin-top: 20px;
+   margin-left:-15px;
 }
 
 #title{
@@ -28,7 +29,7 @@
 
 }
 .int{
-    margin-left:  140px;
+    margin-left:  100px;
 }
 .boutton{
     display:inline-block;

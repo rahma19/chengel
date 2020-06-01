@@ -8,12 +8,14 @@
 <label for="title">Title</label>
 <input type="text" class="form-control" id="title, title" name="title" [(ngModel)]="title" placeholder="What need to do ? "
   required #titre="ngModel">
+  <div *ngIf="titre.invalid && titre.touched" class="alert alert-danger">Required field</div>
 
 </div>
 <div class="col-md-4 mb-3">
 <label for="des">Description</label>
 <textarea type="text" class="form-control" id="des" name="des" [(ngModel)]="des" placeholder="describe the task in detail"
  required #descrip="ngModel"></textarea>
+ <div *ngIf="descrip.invalid && descrip.touched" class="alert alert-danger">Required field</div>
 
 </div>
 <div class="col-md-4 mb-3">
@@ -37,15 +39,7 @@
 <div class="col-md-6 mb-3">
 <label for="validationServer033">Specialization</label>
 <select class="btn btn-dark dropdown-toggle, selectt" name="domaine" [(ngModel)]="domaine">
-  <!--<option value="1">Web Development</option>
-  <option value="2">Design</option>
-  <option value="3">Programming</option>
-  <option value="4">Optimization (SEO)</option>
-  <option value="5">Polygraphy</option>
-  <option value="3">3D Graphics</option>
-  <option value="4">Ads / Marketing</option>
-  <option value="5">Architecture</option>-->
-  <option *ngFor="let c of domaines" [ngValue]="c" [selected]="c.value">{{c.dmn}}</option>
+  <option *ngFor="let c of domaines" [ngValue]="c">{{c.dmn}}</option>
 </select>
 
 
@@ -64,13 +58,15 @@
               <input type="radio" name="fairplay" value="1" class="int">
               Secure deal (with budget reservation) <a href="/" target="_blank"><i class="fa fa-question-circle"></i> </a>
           </label>
-          <div class="help-block mrgt0 mrgb0, int" id="textt">Secure deal with money-back guarantee. You reserve the order budget and we guarantee to refund if the work is done poorly or not in time.</div>
+          <div class="help-block mrgt0 mrgb0, int" id="textt">Secure deal with money-back guarantee. You reserve the order budget<br>
+             and we guarantee to refund if the work is done poorly or not in time.</div>
       </div>
       <div class="radio">
           <label>
               <input type="radio" name="fairplay" value="0" class="int">
               Direct payment to the performer wallet/account                                        </label>
-          <div class="help-block mrgt0 mrgb0, int" id="textt">Cooperation without site participation in the payment process. You arrange payment method with the freelancer by yourself and independently regulate all claims related to the work quality and timing.</div>
+          <div class="help-block mrgt0 mrgb0, int" id="textt">Cooperation without site participation in the payment process. <br>
+            You arrange payment method with the freelancer by yourself<br> and independently regulate all claims related to the work quality and timing.</div>
       </div>
   </div>
 </div>
