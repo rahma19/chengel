@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { Order } from './order';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +13,8 @@ export class DataService {
     this.restlist=this.firebase.list('/test');
     return this.restlist;
   }
-  insertOrder(f){
-    console.log(f.name);
-    this.orderslist.push({
+  insertOrder(f:Order){
+    this.firebase.list('/orders').push({
      title:f.title,
      des:f.des,
      date:f.date,
