@@ -32,6 +32,7 @@ cities: SelectItem[];
     /*this.db.list('test').push({
       nom:'reuhmeuuu'
     });
+<<<<<<< HEAD
     
    this.db.list('orders').push({
     title:'dev',
@@ -39,6 +40,16 @@ cities: SelectItem[];
     description:'blabla',
     date:'3days'
   });*/
+=======
+    */
+  /* this.db.list('orders').push({
+    title:'dev',
+    price:1200,
+    description:'blabla',
+    date:'3days'*/
+  
+
+>>>>>>> a3ccfd1a077aaf571b4be865f448e6468c9780de
 
     
 
