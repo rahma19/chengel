@@ -21,11 +21,15 @@ export class AddOrdersComponent implements OnInit {
 
   constructor(private db:AngularFireDatabase,private dataService:DataService) { 
     this.domaines= [
-      {dmn: 'New York'},
-      {dmn: 'Rome'},
-      {dmn: 'London'},
-      {dmn: 'Istanbul'},
-      {dmn: 'Paris'}]
+      {dmn: 'Web Development'},
+      {dmn: 'Design'},
+      {dmn: 'Programming'},
+      {dmn: 'Optimization (SEO)'},
+      {dmn: 'Polygraphy'},
+      {dmn: '3D Graphics'},
+      {dmn: 'Ads / Marketing'},
+      {dmn: 'Architecture'},
+    ]
   }
   showSuccess(form:NgForm){
     console.log(form.value);
