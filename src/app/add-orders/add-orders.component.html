@@ -2,7 +2,7 @@
 <h1>Add Order</h1>
 <hr>
 <div class="container">
-<form #f="ngForm" (ngubmit)="showSuccess(f)">
+<form #f="ngForm" (ngSubmit)="showSuccess(f)">
 <div class="form-row">
 <div class="col-md-4 mb-3">
 <label for="title">Title</label>
@@ -25,8 +25,8 @@
         <option value="1">3 days</option>
         <option value="2">1 week</option>
         <option value="3">2 weeks</option>
-        <option value="3">1 month</option>
-        <option value="3">termlessly</option>
+        <option value="4">1 month</option>
+        <option value="5">termlessly</option>
       </select>
   
  
@@ -78,8 +78,8 @@
 <div class="form-row">
   <div class="col-md-4 mb-3">
   <label for="validationServer013">Account Type</label><br>
-  <button class="btn btn-outline-dark">Private person</button>
-  <button class="btn btn-outline-dark">Company</button>
+  <a href="#" class="btn btn-outline-dark">Private person</a>
+  <a href="#" class="btn btn-outline-dark">Company</a>
   </div>
 </div>
 
@@ -114,7 +114,7 @@
 You must agree before submitting.
 </div>
 </div>
-<button type="submit" [disabled]="f.invalid" class="boutton">Add Order</button>
+<button type="submit"  class="boutton">Add Order</button>
 </form></div>
 
 

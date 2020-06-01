@@ -13,6 +13,9 @@ export class AddOrdersComponent implements OnInit {
   des="";
   date="";
   domaine="";
+  price=0;
+  name="";
+  mail="";
 
   constructor(private db:AngularFireDatabase) { 
     this.domaines= [
