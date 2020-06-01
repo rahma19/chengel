@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { NgForm } from '@angular/forms';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-add-orders',
@@ -14,10 +15,11 @@ export class AddOrdersComponent implements OnInit {
   date="";
   domaine="";
   price=0;
+
   name="";
   mail="";
 
-  constructor(private db:AngularFireDatabase) { 
+  constructor(private db:AngularFireDatabase,private dataService:DataService) { 
     this.domaines= [
       {dmn: 'New York'},
       {dmn: 'Rome'},
@@ -26,7 +28,8 @@ export class AddOrdersComponent implements OnInit {
       {dmn: 'Paris'}]
   }
   showSuccess(f:NgForm){
-    console.log("azza");
+    console.log(f.value);
+    this.dataService.insertOrder(f.value); 
 
   }
 

@@ -22,11 +22,19 @@
  
     <select class="btn btn-dark dropdown-toggle, selectt" name="date" [(ngModel)]="date">
         <option value="" disabled selected>Choose your option</option>
+<<<<<<< HEAD
         <option value="1">3 days</option>
         <option value="2">1 week</option>
         <option value="3">2 weeks</option>
         <option value="4">1 month</option>
         <option value="5">termlessly</option>
+=======
+        <option value="3 days">3 days</option>
+        <option value="1 week">1 week</option>
+        <option value="2 weeks">2 weeks</option>
+        <option value="1 month">1 month</option>
+        <option value="termlessly">termlessly</option>
+>>>>>>> bfd932aaab7ed6f4c565aaa6e1140935917fbff9
       </select>
   
  
@@ -82,7 +90,14 @@
   <a href="#" class="btn btn-outline-dark">Company</a>
   </div>
 </div>
-
+<div class="form-row">
+  <div class="col-md-4 mb-3">
+  <label for="mail">Price</label>
+  <input type="text" class="form-control" id="price" placeholder="price" name="price" [(ngModel)]="price"
+    required #prc="ngModel">
+    <div *ngIf="prc.invalid && prc.dirty" class="alert alert-danger">Price invalid</div>
+</div>
+</div>
 <div>
 <div class="form-row">
   <div class="col-md-4 mb-3">
@@ -116,7 +131,7 @@ You must agree before submitting.
 </div>
 <button type="submit"  class="boutton">Add Order</button>
 </form></div>
-
+<!-- [disabled]="f.invalid"-->
 
 
 
