@@ -10,7 +10,7 @@ export class DataService {
   orderslist:AngularFireList<any>;
   constructor(private firebase: AngularFireDatabase) { }
   getRest(){
-    this.restlist=this.firebase.list('/test');
+    this.restlist=this.firebase.list('/orders');
     return this.restlist;
   }
   insertOrder(f:Order){
