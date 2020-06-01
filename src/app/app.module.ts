@@ -22,6 +22,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { JobordersComponent } from './joborders/joborders.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DropdownModule} from 'primeng/dropdown';
+import {TableModule} from 'primeng/table';
+import { PaginatorModule } from 'primeng/paginator'; 
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import {DropdownModule} from 'primeng/dropdown';
     ErrorComponent
   ],
   imports: [    
+    TableModule,PaginatorModule,
     AngularFireModule.initializeApp(environment.firebase, 'my-app-name'),
     BrowserModule,AngularFireDatabaseModule,MultiSelectModule,
     AppRoutingModule,AngularFirestoreModule,BrowserAnimationsModule,

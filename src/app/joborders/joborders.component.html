@@ -1,9 +1,10 @@
 <section>
 <div class="search-container" style="margin-top: 10px; padding: 10px;">
-    <input type="text" id="search-bar" placeholder="Find an order">
+    <input type="text" id="search-bar" placeholder="Find an order" (input)="tt.filterGlobal($event.target.value, 'contains')">
     <a href="#" class="search-icon">
         <i class="fa fa-search"></i>
     </a>
+
 </div> 
 <div class="wrapper" style="margin-top: 20px;">
 <div class="box">
@@ -11,9 +12,13 @@
     <div class="text-center" style="border: 2px solid rgb(215, 227, 248);margin: 20px;width:220px;">
         <h3 style="background-color: rgb(215, 227, 248);padding: 10px;">For only pro</h3>
         <div style="padding: 10px;">
-            <p-dropdown  [options]="cities" [(ngModel)]="selectedCity" placeholder="Specializations" [filter]="true" filterBy="label,value.name"></p-dropdown>
-            <hr class="hr-light"> 
-            <p-dropdown  [options]="cities" [(ngModel)]="selectedCity" placeholder="Price" [filter]="true" filterBy="label,value.name"></p-dropdown>
+            <select class="form-control" [(ngModel)]="hehe.name" (change)="selectChangeHandler($event.target.value)">
+                <option *ngFor="let t of hehe" value="{{ t.name }}" style="width: 450px;">{{ t.name }}</option>
+              </select>       
+            <hr class="hr-light">
+            <select class="form-control" [(ngModel)]="hehe.price">
+                <option *ngFor="let t of hehe" value="{{ t.price }}" style="width: 450px;" >{{ t.price }}</option>
+              </select> 
         </div>
         </div></div>
     <!--border: 2px dotted rgb(215, 227, 248);-->
@@ -24,8 +29,12 @@
                 >add Orders</a></p>  
         </div>
         <hr class="hr-light">
-        <h4 class="flex-item" style="margin-left: 25px;">Found 2 orders</h4>  
-        <div *ngFor="let t of hehe" style="border: 1px solid rgb(215, 227, 248);margin: 20px;padding: 20px;border-radius: 20px;"> 
+        <h4 class="flex-item" style="margin-left: 25px;">Found {{hehe.length}} orders</h4>  
+        <p-table #tt [columns]="cols" [value]="hehe" [globalFilterFields]="['title']">
+            <ng-template pTemplate="body" let-t let-expanded="expanded" let-columns="columns"  style="border: 1px solid rgb(215, 227, 248);margin: 20px;padding: 20px;border-radius: 20px;">
+                <tr>
+                  <td style="margin: 20px;padding: 20px;">
+        <!--[paginator]="true" [rows]="10"<div *ngFor="let t of hehe" style="border: 1px solid rgb(215, 227, 248);margin: 20px;padding: 20px;border-radius: 20px;">-->
             <h5 class="text-primary"> {{t.title}} </h5>
             <p style="margin-top: 20px;"> <span class="bg-success text-white" style="border-radius: 4px; padding: 5px; color: black;" >{{t.price}} DT </span></p>
             <p>{{ t.des }}</p>
@@ -33,8 +42,13 @@
                 <i style="font-size: 20px;" class=" fas fa-calendar-alt"></i> {{t.date}} </strong>
             <strong style="font-size: 15px;padding: 10px;"><i style="font-size: 20px;" class=" fas fa-calendar-alt"></i> {{t.date}} </strong>
                 <button class="btn btn-default text-primary" style="float: right;border: 1px solid gray;">Open</button>
-        </div>   
+        <!--</div> -->
+        </td>
+        </tr>
+        </ng-template> 
+    </p-table> 
     </div></div>
     
 </div></div>
+
 </section>

@@ -12,20 +12,23 @@ import {SelectItem} from 'primeng/api';
 export class JobordersComponent implements OnInit {
 test:Observable<any[]>;
 hehe=[];
-nb=0;
+spec="specializations";
 selectedCities: any[];
 cities: SelectItem[];
+chaine=[];
+result=[];
+selectedDay: string = '';
+
   constructor(private db:AngularFireDatabase,private dataService:DataService) { 
     this.test=db.list('orders').valueChanges();
-    this.cities= [
-      {label:'New York', value:{id:1, name: 'New York', code: 'NY'}},
-      {label:'Rome', value:{id:2, name: 'Rome', code: 'RM'}},
-      {label:'London', value:{id:3, name: 'London', code: 'LDN'}},
-      {label:'Istanbul', value:{id:4, name: 'Istanbul', code: 'IST'}},
-      {label:'Paris', value:{id:5, name: 'Paris', code: 'PRS'}}
-  ];
+   
   }
+  
+  selectChangeHandler (event: any) {
+    this.result = this.hehe.filter(word => word.name==event);  
+    console.log(this.result);  
 
+  }
 
 
   ngOnInit() {
@@ -37,6 +40,5 @@ cities: SelectItem[];
      this.hehe.push(y);
    });
   })
-  console.log(this.hehe.length);
-  }
+}
 }
