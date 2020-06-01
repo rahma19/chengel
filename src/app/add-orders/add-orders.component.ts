@@ -24,9 +24,19 @@ export class AddOrdersComponent implements OnInit {
       {dmn: 'Istanbul'},
       {dmn: 'Paris'}]
   }
-  showSuccess(f:NgForm){
-    console.log(f.value);
-    this.dataService.insertOrder(f.value); 
+  showSuccess(form:NgForm){
+    console.log(form.value);
+   var  f=form.value;
+    //this.dataService.insertOrder(f.value); 
+    this.db.list('orders').push({
+      title:f.title,
+     des:f.des,
+     date:f.date,
+     domaine:f.domaine,
+     price:f.price,
+     mail:f.mail,
+     name:f.name
+         });
 
   }
 
