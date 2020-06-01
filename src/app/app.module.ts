@@ -21,6 +21,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { JobordersComponent } from './joborders/joborders.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {DropdownModule} from 'primeng/dropdown';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,AngularFireDatabaseModule,MultiSelectModule,
     AppRoutingModule,AngularFirestoreModule,BrowserAnimationsModule,
     FormsModule,AngularFireStorageModule,AngularFireAuthModule,
-    ScrollingModule
+    ScrollingModule,DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

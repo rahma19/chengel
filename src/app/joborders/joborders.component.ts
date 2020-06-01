@@ -12,52 +12,31 @@ import {SelectItem} from 'primeng/api';
 export class JobordersComponent implements OnInit {
 test:Observable<any[]>;
 hehe=[];
+nb=0;
 selectedCities: any[];
 cities: SelectItem[];
   constructor(private db:AngularFireDatabase,private dataService:DataService) { 
-    /*this.test=db.list('test').valueChanges();
+    this.test=db.list('orders').valueChanges();
     this.cities= [
       {label:'New York', value:{id:1, name: 'New York', code: 'NY'}},
       {label:'Rome', value:{id:2, name: 'Rome', code: 'RM'}},
       {label:'London', value:{id:3, name: 'London', code: 'LDN'}},
       {label:'Istanbul', value:{id:4, name: 'Istanbul', code: 'IST'}},
       {label:'Paris', value:{id:5, name: 'Paris', code: 'PRS'}}
-  ];*/
+  ];
   }
 
 
 
-
   ngOnInit() {
-    /*this.db.list('test').push({
-      nom:'reuhmeuuu'
-    });
-   this.db.list('orders').push({
-    title:'dev',
-    price:1200,
-    description:'blabla',
-    date:'3days'
-  });*/
-  /* this.db.list('orders').push({
-    title:'dev',
-    price:1200,
-    description:'blabla',
-    date:'3days'*/
-    
-
-
-
-
-
     var x= this.dataService.getRest();
-x.snapshotChanges().subscribe(item=>{
-  console.log(item);
-  item.forEach(element=>{
+    x.snapshotChanges().subscribe(item=>{
+    item.forEach(element=>{
     var y=element.payload.toJSON();
     y['$key']=element.key
      this.hehe.push(y);
    });
   })
-  console.log(this.hehe);
+  console.log(this.hehe.length);
   }
 }

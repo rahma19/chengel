@@ -1,13 +1,14 @@
 
 .search-container{
-    width: 100%;
+    width: 80%;
     display: block;
     margin: 0 auto;
+    background-color: rgb(215, 227, 248);
   }
   
   input#search-bar{
     margin: 0 auto;
-    width: 100%;
+    width: 98%;
     height: 45px;
     border-radius: 5px;
     padding: 0 20px;
@@ -20,14 +21,15 @@
       position: relative;
       float: right;
       width: 75px !important;
-      top: -39px;
-      right: -38px;
+      top: -35px;
+      right: -12px;
       font-size: 30px;
   }
   .wrapper {
-    border: 2px dotted rgb(96, 139, 168);
-    width: 100%;
-    height: 820px;
+    border: 1px solid rgb(215, 227, 248);
+    width: 98%;
+    height: 100%;
+    margin: 10px;
   }
 .box {
 
@@ -39,3 +41,8 @@
     flex: 1 1 160px;
     margin: 10px;
   }
+.bd{
+  border-right: 2px solid rgb(215, 227, 248);
+  font-size: 20px;
+  width: 25%;
+}
