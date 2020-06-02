@@ -1,1 +1,45 @@
-<p>{{y.price}}</p>
+<div style="margin: 100px;">
+<div style="border: 2px solid rgb(215, 227, 248);width: 800px;">
+<div style="display: flex;color: gray;padding: 10px;">
+    <i class="fas fa-user-circle" style="font-size: 60px;"></i>
+    <p style="padding-left:10px ;">
+        Customer<br>
+Registered on the site 8 months
+    </p>
+</div>
+<hr class="hr-light"> 
+<p class="bg-success text-white" style="float: right;margin-right: 20px; border-radius: 4px; padding:10px;" >{{y?.price}} DT </p>
+<div style="padding:10px ;">
+    <h5>{{y?.title}}</h5>
+    <strong style="padding-top:10px ;font-size: 15px;"><i class="far fa-calendar-alt"></i>
+        Offers accepted before 15.06.2020 </strong>
+    <p style="padding:10px ;">{{ y?.des }}</p>
+</div>
+<hr class="hr-light"> 
+<div style="padding:10px ;">
+    <strong style="font-size: 15px;padding: 10px;border-right: 2px solid rgb(215, 227, 248);color:gray;">
+        <i style="font-size: 20px;padding: 10px;" class="fas fa-briefcase"></i>One-time order  
+    </strong>
+    <strong style="font-size: 15px;padding: 10px;border-right: 2px solid rgb(215, 227, 248);color:gray;">
+        <i style="font-size: 20px;padding: 10px;" class="far fa-clock"></i>Yesterday  
+    </strong>
+    <strong style="font-size: 15px;padding: 10px;color:gray;"><i style="font-size: 20px;padding: 10px;" class=" fas fa-calendar-alt"></i> {{y?.date}} </strong>
+</div>
+</div>
+
+<div style="display: flex;padding:20px;margin-left: 200px;">
+    <button class="btn btn-default " style="border: 1px solid gray;padding: 10px;"><i class="fas fa-arrow-left"></i> All orders</button>
+   &nbsp; <button class="btn btn-success"><i class="fas fa-arrow-right"></i> Apply for a job</button>
+</div>
+</div>
+
+  <section style="background-color: rgb(220, 250, 255);padding:3%">
+    <h3 style="margin-top: 2%;">
+      If you have any questions, comments or suggestions
+      <br /> please contact us.</h3>
+    <button class="btn" style="background-color: rgb(255, 255, 255);margin-left: 38%; width:300px">
+      <img width="15%" src="../assets/mail.png" alt=""><a href=""> Contact US
+      </a>
+    </button>
+    
+  </section>
