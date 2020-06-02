@@ -2,31 +2,33 @@
 <h1>Add Order</h1>
 <hr>
 <div class="container">
-<form >
+<form #f="ngForm" (ngSubmit)="showSuccess(f)">
 <div class="form-row">
 <div class="col-md-4 mb-3">
-<label for="validationServer013">Title</label>
-<input type="text" class="form-control is-valid" id="validationServer013" placeholder="What need to do ? "
-  required>
+<label for="title">Title</label>
+<input type="text" class="form-control" id="title, title" name="title" [(ngModel)]="title" placeholder="What need to do ? "
+  required #titre="ngModel">
+  <div *ngIf="titre.invalid && titre.touched" class="alert alert-danger">Required field</div>
 
 </div>
 <div class="col-md-4 mb-3">
-<label for="validationServer023">Description</label>
-<textarea type="text" class="form-control is-valid" id="validationServer023" placeholder="describe the task in detail"
- required></textarea>
+<label for="des">Description</label>
+<textarea type="text" class="form-control" id="des" name="des" [(ngModel)]="des" placeholder="describe the task in detail"
+ required #descrip="ngModel"></textarea>
+ <div *ngIf="descrip.invalid && descrip.touched" class="alert alert-danger">Required field</div>
 
 </div>
 <div class="col-md-4 mb-3">
 <label for="validationServerUsername33">Application Acceptance</label>
 <div class="input-group">
  
-    <select class="btn btn-dark dropdown-toggle, selectt">
+    <select class="btn btn-dark dropdown-toggle, selectt" name="date" [(ngModel)]="date">
         <option value="" disabled selected>Choose your option</option>
-        <option value="1">3 days</option>
-        <option value="2">1 week</option>
-        <option value="3">2 weeks</option>
-        <option value="3">1 month</option>
-        <option value="3">termlessly</option>
+        <option value="3 days">3 days</option>
+        <option value="1 week">1 week</option>
+        <option value="2 weeks">2 weeks</option>
+        <option value="1 month">1 month</option>
+        <option value="termlessly">termlessly</option>
       </select>
   
  
@@ -36,15 +38,8 @@
 <div class="form-row">
 <div class="col-md-6 mb-3">
 <label for="validationServer033">Specialization</label>
-<select class="btn btn-dark dropdown-toggle, selectt">
-  <option value="1">Web Development</option>
-  <option value="2">Design</option>
-  <option value="3">Programming</option>
-  <option value="4">Optimization (SEO)</option>
-  <option value="5">Polygraphy</option>
-  <option value="3">3D Graphics</option>
-  <option value="4">Ads / Marketing</option>
-  <option value="5">Architecture</option>
+<select class="btn btn-dark dropdown-toggle, selectt" name="domaine" [(ngModel)]="domaine">
+  <option *ngFor="let c of domaines" [ngValue]="c">{{c.dmn}}</option>
 </select>
 
 
@@ -63,13 +58,15 @@
               <input type="radio" name="fairplay" value="1" class="int">
               Secure deal (with budget reservation) <a href="/" target="_blank"><i class="fa fa-question-circle"></i> </a>
           </label>
-          <div class="help-block mrgt0 mrgb0, int" id="textt">Secure deal with money-back guarantee. You reserve the order budget and we guarantee to refund if the work is done poorly or not in time.</div>
+          <div class="help-block mrgt0 mrgb0, int" id="textt">Secure deal with money-back guarantee. You reserve the order budget<br>
+             and we guarantee to refund if the work is done poorly or not in time.</div>
       </div>
       <div class="radio">
           <label>
               <input type="radio" name="fairplay" value="0" class="int">
               Direct payment to the performer wallet/account                                        </label>
-          <div class="help-block mrgt0 mrgb0, int" id="textt">Cooperation without site participation in the payment process. You arrange payment method with the freelancer by yourself and independently regulate all claims related to the work quality and timing.</div>
+          <div class="help-block mrgt0 mrgb0, int" id="textt">Cooperation without site participation in the payment process. <br>
+            You arrange payment method with the freelancer by yourself<br> and independently regulate all claims related to the work quality and timing.</div>
       </div>
   </div>
 </div>
@@ -77,25 +74,34 @@
 <div class="form-row">
   <div class="col-md-4 mb-3">
   <label for="validationServer013">Account Type</label><br>
-  <button class="btn btn-outline-dark">Private person</button>
-  <button class="btn btn-outline-dark">Company</button>
+  <a href="#" class="btn btn-outline-dark">Private person</a>
+  <a href="#" class="btn btn-outline-dark">Company</a>
   </div>
 </div>
-
+<div class="form-row">
+  <div class="col-md-4 mb-3">
+  <label for="mail">Price</label>
+  <input type="text" class="form-control" id="price" placeholder="price" name="price" [(ngModel)]="price"
+    required #prc="ngModel">
+    <div *ngIf="prc.invalid && prc.dirty" class="alert alert-danger">Price invalid</div>
+</div>
+</div>
 <div>
 <div class="form-row">
   <div class="col-md-4 mb-3">
-  <label for="validationServer013">Email</label>
-  <input type="text" class="form-control is-valid" id="validationServer013" placeholder="Email"
-    required>
+  <label for="mail">Email</label>
+  <input type="text" class="form-control" id="mail" placeholder="Email" name="mail" [(ngModel)]="mail"
+    required #email="ngModel">
+    <div *ngIf="email.invalid && email.dirty" class="alert alert-danger">Email invalid</div>
 </div>
 </div>
 
 <div class="form-row">
   <div class="col-md-4 mb-3">
-  <label for="validationServer013">Name</label>
-  <input type="text" class="form-control is-valid" id="validationServer013" placeholder="Your name"
-    required>
+  <label for="name">Name</label>
+  <input type="text" class="form-control" id="name" placeholder="Your name" name="name" [(ngModel)]="name"
+    required #nom="ngModel">
+    <div *ngIf="nom.invalid && nom.touched" class="alert alert-danger">Required field</div>
 </div>
 </div>
 </div>
@@ -111,9 +117,9 @@
 You must agree before submitting.
 </div>
 </div>
-
+<button type="submit"  class="boutton">Add Order</button>
 </form></div>
-<a href="#" class="boutton">Add Order</a>
+<!-- [disabled]="f.invalid"-->
 
 
 

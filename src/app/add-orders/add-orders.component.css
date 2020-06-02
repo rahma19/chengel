@@ -12,10 +12,15 @@
     height:62px;
 }
 #payment{
-   margin-top: 20px;;
-
-    
+   margin-top: 20px;
+   margin-left:-15px;
 }
+
+#title{
+  width:370px;
+}
+
+
 #textt{
     font-weight: bold;
     font-family : Arial, Helvetica, sans-serif;
@@ -24,13 +29,13 @@
 
 }
 .int{
-    margin-left:  140px;
+    margin-left:  100px;
 }
 .boutton{
     display:inline-block;
     width:200px;
     padding:10px;
-    background-color:goldenrod;
+    background-color:#3AC943;
     color:#fff;
     text-decoration: none;
     text-align: center;
@@ -58,3 +63,9 @@
   .boutton:hover:before{
     width: 100%;
   }
+
+  input.ng-valid{ border-left: 2px solid green;}
+  input.ng-invalid{ border-left: 2px solid red;}
+
+  textarea.ng-valid{border-left: 2px solid green;}
+  textarea.ng-invalid{ border-left: 2px solid red;}

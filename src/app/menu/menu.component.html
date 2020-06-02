@@ -1,8 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <a [routerLink]="['/homePage']" class="navbar-brand"
-    ><img src="../assets/bird.png" width="60px" height="55px"
-  /></a> 
-  
+    <a class="first" [routerLink]="['/homePage']" class="navbar-brand"
+    ><img src="../assets/bird.png" width="60px" height="40px"/>  <p class="second">Freelancini</p>
+  </a> 
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,6 +22,10 @@
               <li class="nav-item active">
                 <a class="nav-link" routerLinkActive="actif" [routerLink]="['/addOrders']"
                   >addOrders</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" routerLinkActive="actif" [routerLink]="['/signContract']"
+                  >signContract</a>
               </li>
         </ul>
         <ul class="navbar-nav">

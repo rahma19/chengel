@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MultiSelectModule} from 'primeng/multiselect';
 import { WorkersComponent } from './workers/workers.component';
 import { AddOrdersComponent } from './add-orders/add-orders.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SignInComponent } from './sign-in/sign-in.component';
-/*import { SignOutComponent } from './sign-out/sign-out.component';*/
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { SignContractComponent } from './sign-contract/sign-contract.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
@@ -21,6 +22,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { JobordersComponent } from './joborders/joborders.component';
 import { EditComponent } from './edit/edit.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {DropdownModule} from 'primeng/dropdown';
+import {TableModule} from 'primeng/table';
+import { PaginatorModule } from 'primeng/paginator'; 
 
 @NgModule({
   declarations: [
@@ -39,10 +44,12 @@ import { EditComponent } from './edit/edit.component';
     EditComponent
   ],
   imports: [    
+    TableModule,PaginatorModule,
     AngularFireModule.initializeApp(environment.firebase, 'my-app-name'),
-    BrowserModule,AngularFireDatabaseModule,
-    AppRoutingModule,AngularFirestoreModule,
-    FormsModule,AngularFireStorageModule,AngularFireAuthModule
+    BrowserModule,AngularFireDatabaseModule,MultiSelectModule,
+    AppRoutingModule,AngularFirestoreModule,BrowserAnimationsModule,
+    FormsModule,AngularFireStorageModule,AngularFireAuthModule,
+    ScrollingModule,DropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]
