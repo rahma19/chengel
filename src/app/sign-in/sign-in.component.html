@@ -11,34 +11,35 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<form>
+				<form  #f="ngForm" (ngSubmit)="showSuccess(f)">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username*">
+						<input type="text" class="form-control" name="user" [(ngModel)]="user" placeholder="username*">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-envelope"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="e-mail adresse*">
+						<input type="text" class="form-control" name="address" [(ngModel)]="address" placeholder="e-mail adresse*">
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password*">
+						<input type="password" class="form-control" name="password" [(ngModel)]="password" placeholder="password*">
 					</div>
-					<div>
-						<input type="radio" id="Freelancer" name="drone" value="Freelancer">
+					<div > 
+						<input type="radio" id="Freelancer" name="bt" value="freelancer" ngModel>
 						<label for="Freelancer" class="text-white"> Freelancer</label>
-						<input type="radio" id="Customer" name="drone" value="Customer">
+						<input type="radio" id="Customer" name="bt" value="customer" ngModel>
 						<label for="Customer" class="text-white"> Customer</label>
 						
 					</div>
+					<input type="hidden" name="date" [(ngModel)]="date">
 					<div class="row align-items-center ">
 						<p class="text-danger">All fields are required(*).</p>
 					</div>
