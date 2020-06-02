@@ -5,7 +5,13 @@
     background-image: url('https://img.freepik.com/free-photo/cropped-shot-simple-workspace-with-blank-screen-computer-white-table-with-blurred-office-room-background_67155-5437.jpg?size=626&ext=jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position-y: 100%;
     font-family: 'Numans', sans-serif;
+    font-weight: bold;
+    }
+    .bg background-image{
+      max-height: 100%;
+      
     }
 .selectt{
     width:300px;
@@ -69,3 +75,22 @@
 
   textarea.ng-valid{border-left: 2px solid green;}
   textarea.ng-invalid{ border-left: 2px solid red;}
+
+
+  :host ::ng-deep button {
+    margin-right: .25em;
+}
+
+:host ::ng-deep .custom-toast .ui-toast-message {
+    background: #FC466B;
+    background: -webkit-linear-gradient(to right, #3F5EFB, #FC466B);
+    background: linear-gradient(to right, #3F5EFB, #FC466B);
+}
+
+:host ::ng-deep .custom-toast .ui-toast-message div {
+    color: #ffffff;
+}
+
+:host ::ng-deep .custom-toast .ui-toast-message.ui-toast-message-info .ui-toast-close-icon {
+    color: #ffffff;
+}
