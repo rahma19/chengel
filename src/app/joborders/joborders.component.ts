@@ -19,6 +19,7 @@ cities: SelectItem[];
 chaine=[];
 result=[];
 selectedDay: string = '';
+selDmn : string='';
 
   constructor(private db:AngularFireDatabase,private dataService:DataService) { 
     this.test=db.list('orders').valueChanges();
@@ -26,8 +27,9 @@ selectedDay: string = '';
   }
   
   selectChangeHandler (event: any) {
-    this.result = this.hehe.filter(word => word.name==event);  
+    this.result = this.hehe.filter(word => word.domaine.dmn==event);  
     console.log(this.result);  
+    console.log(this.hehe[0].domaine.dmn);
 
   }
 
@@ -40,6 +42,8 @@ selectedDay: string = '';
     y['$key']=element.key
      this.hehe.push(y);
    });
+   console.log("hehe tab:"+this.hehe[0].domaine.dmn);
+
   })
 }
 }
