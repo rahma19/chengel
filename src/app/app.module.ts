@@ -26,7 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DropdownModule} from 'primeng/dropdown';
 import {TableModule} from 'primeng/table';
 import { PaginatorModule } from 'primeng/paginator';
-import { DetailComponent } from './detail/detail.component'; 
+import { DetailComponent } from './detail/detail.component';
+import { FooterComponent } from './footer/footer.component'; 
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { DetailComponent } from './detail/detail.component';
     MenuComponent,
     ErrorComponent,
     EditComponent,
-    DetailComponent
+    DetailComponent,
+    FooterComponent
   ],
   imports: [    
     TableModule,PaginatorModule,
