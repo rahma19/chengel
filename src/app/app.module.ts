@@ -25,7 +25,8 @@ import { EditComponent } from './edit/edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {DropdownModule} from 'primeng/dropdown';
 import {TableModule} from 'primeng/table';
-import { PaginatorModule } from 'primeng/paginator'; 
+import { PaginatorModule } from 'primeng/paginator';
+import { DetailComponent } from './detail/detail.component'; 
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { PaginatorModule } from 'primeng/paginator';
     LoginComponent,
     MenuComponent,
     ErrorComponent,
-    EditComponent
+    EditComponent,
+    DetailComponent
   ],
   imports: [    
     TableModule,PaginatorModule,

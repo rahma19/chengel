@@ -3,6 +3,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { Observable } from 'rxjs';
 import { DataService } from '../data.service';
 import {SelectItem} from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-joborders',
@@ -21,7 +22,7 @@ result=[];
 selectedDay: string = '';
 selDmn : string='';
 
-  constructor(private db:AngularFireDatabase,private dataService:DataService) { 
+  constructor(private router:Router,private db:AngularFireDatabase,private dataService:DataService) { 
     this.test=db.list('orders').valueChanges();
    
   }
@@ -33,6 +34,10 @@ selDmn : string='';
 
   }
 
+  onClick(row){
+    this.router.navigate(['/detail',row.$key]);
+
+  }
 
   ngOnInit() {
     var x= this.dataService.getRest();
