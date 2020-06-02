@@ -18,3 +18,9 @@
 [0530/042628.796:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [0530/044522.291:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [0530/044522.291:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0530/045417.168:ERROR:process_reader_win.cc(123)] NtOpenThread: {Accès refusé} Un processus a demandé l’accès a un objet, mais il ne bénéficie pas des autorisations nécessaires. (0xc0000022)
+[0530/045417.200:ERROR:exception_snapshot_win.cc(98)] thread ID 248 not found in process
+[0530/045417.184:ERROR:process_reader_win.cc(123)] NtOpenThread: {Accès refusé} Un processus a demandé l’accès a un objet, mais il ne bénéficie pas des autorisations nécessaires. (0xc0000022)
+[0530/045417.278:ERROR:exception_snapshot_win.cc(98)] thread ID 11788 not found in process
+[0603/003621.404:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[0603/003621.405:ERROR:crash_report_database_win.cc(469)] failed to stat report
