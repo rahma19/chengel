@@ -37,7 +37,7 @@ export class AddOrdersComponent implements OnInit {
     console.log(form.value);
    var  f=form.value;
     //this.dataService.insertOrder(f.value); 
-   this.db.list('orders').push({
+  /* this.db.list('orders').push({
       title:f.title,
      des:f.des,
      date:f.date,
@@ -45,7 +45,7 @@ export class AddOrdersComponent implements OnInit {
      price:f.price,
      mail:f.mail,
      name:f.name
-         });
+         });*/
 
   }
 
