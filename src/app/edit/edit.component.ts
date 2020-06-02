@@ -14,13 +14,13 @@ import { AngularFireDatabase } from '@angular/fire/database';
 export class EditComponent implements OnInit {
   
   users:Observable<any[]>;
-  price:any;
+  name:any;
   constructor(db:DataService,private route:ActivatedRoute,private fr:AngularFireDatabase) { 
 
   }
 
   ngOnInit() {
-    this.price=this.route.snapshot.params['price'];
+    this.name=this.route.snapshot.params['name'];
     this.users=this.fr.list('orders').valueChanges();
 
   }
