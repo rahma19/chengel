@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import {ReactiveFormsModule} from '@angular/forms';
 import { WorkersComponent } from './workers/workers.component';
 import { AddOrdersComponent } from './add-orders/add-orders.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -20,6 +20,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { JobordersComponent } from './joborders/joborders.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { JobordersComponent } from './joborders/joborders.component';
     SignContractComponent,
     LoginComponent,
     MenuComponent,
-    ErrorComponent
+    ErrorComponent,
+    EditComponent
   ],
   imports: [    
     AngularFireModule.initializeApp(environment.firebase, 'my-app-name'),

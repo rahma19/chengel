@@ -10,6 +10,7 @@ import { DataService } from '../data.service';
 })
 export class JobordersComponent implements OnInit {
 test:Observable<any[]>;
+
 hehe=[];
   constructor(private db:AngularFireDatabase,private dataService:DataService) { 
     this.test=db.list('test').valueChanges();

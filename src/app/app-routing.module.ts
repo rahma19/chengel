@@ -8,7 +8,7 @@ import { AddOrdersComponent } from './add-orders/add-orders.component';
 import { JobordersComponent } from './joborders/joborders.component';
 import { WorkersComponent } from './workers/workers.component';
 import { ErrorComponent } from './error/error.component';
-
+import {EditComponent} from '../app/edit/edit.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -19,6 +19,7 @@ const routes: Routes = [
   { path: "addOrders", component: AddOrdersComponent },
   { path: "jobOrders", component: JobordersComponent },
   { path: "workers", component: WorkersComponent },
+  {path:'workers/:price',component:EditComponent},
   { path: "**", component: ErrorComponent }
 ];
 @NgModule({
