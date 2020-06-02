@@ -117,7 +117,25 @@
 You must agree before submitting.
 </div>
 </div>
-<button type="submit"  class="boutton">Add Order</button>
+<button type="submit"  class="boutton" data-toggle="modal" data-target="#myModal">Add Order</button>
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+  
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Order Submitted</h4>
+      </div>
+      <div class="modal-body">
+        <p>You have successfully submitted.</p>
+      </div>
+      <div class="modal-footer">
+        <a type="button" class="btn btn-default" data-dismiss="modal" routerLinkActive="actif" [routerLink]="['/jobOrders']">Close</a>
+      </div>
+    </div>
+  </div>
+</div>
 </form></div>
 <!-- [disabled]="f.invalid"-->
 

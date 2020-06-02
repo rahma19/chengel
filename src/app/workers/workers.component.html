@@ -87,20 +87,20 @@
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
-                  <th>age</th>
                   <th>Name</th>
-                  <th>surname</th>
+                  <th>Title</th>
+                  <th>Price</th>
                   <th>Details</th>
                  
                 </tr>
                 
                 <tr *ngFor="let i of users | async">
                     <!--<ng-container *ngIf="i.spec=='freelancer'" >-->
-                    <td>{{i.date}}</td>
-                    <td>{{i.description}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.title}}</td>
                     <td>{{i.price}}</td>
                     <td>
-                        <a [routerLink]="[i.price]"><button class="btn btn-primary" >Details</button></a>
+                        <a [routerLink]="[i.name]"><button class="btn btn-primary" >Details</button></a>
                     </td>
                <!-- </ng-container>-->
                 </tr>

@@ -3,10 +3,12 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { NgForm } from '@angular/forms';
 import { DataService } from '../data.service';
 
+
 @Component({
   selector: 'app-add-orders',
   templateUrl: './add-orders.component.html',
-  styleUrls: ['./add-orders.component.css']
+  styleUrls: ['./add-orders.component.css'],
+ 
 })
 export class AddOrdersComponent implements OnInit {
   domaines=[];
@@ -31,11 +33,11 @@ export class AddOrdersComponent implements OnInit {
       {dmn: 'Architecture'},
     ]
   }
-  showSuccess(form:NgForm){
+ showSuccess(form:NgForm){
     console.log(form.value);
    var  f=form.value;
     //this.dataService.insertOrder(f.value); 
-    this.db.list('orders').push({
+   this.db.list('orders').push({
       title:f.title,
      des:f.des,
      date:f.date,
@@ -55,6 +57,8 @@ export class AddOrdersComponent implements OnInit {
       date:'3 days'
     })*/
   }
+
+ 
  
   
 
