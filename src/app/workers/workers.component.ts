@@ -18,7 +18,7 @@ export class WorkersComponent implements OnInit {
   specs:["freelancer","customer"];
   
   constructor(public dataservice:DataService,db:AngularFireDatabase,private router:Router) {
-     this.users=db.list('orders').valueChanges();
+     this.users=db.list('freelancer').valueChanges();
     }
   
 

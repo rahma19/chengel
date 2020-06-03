@@ -20,8 +20,8 @@ export class EditComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.name=this.route.snapshot.params['name'];
-    this.users=this.fr.list('orders').valueChanges();
+    this.name=this.route.snapshot.params['user'];
+    this.users=this.fr.list('freelancer').valueChanges();
 
   }
 
