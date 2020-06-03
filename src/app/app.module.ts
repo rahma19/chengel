@@ -29,6 +29,8 @@ import { PaginatorModule } from 'primeng/paginator';
 import { DetailComponent } from './detail/detail.component';
 import { FooterComponent } from './footer/footer.component'; 
 import { DatePipe } from '@angular/common';
+import {CalendarModule} from 'primeng/calendar';
+import {MessagesModule} from 'primeng/messages';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,7 @@ import { DatePipe } from '@angular/common';
     FooterComponent
   ],
   imports: [    
-    TableModule,PaginatorModule,
+    TableModule,PaginatorModule,CalendarModule,MessagesModule,
     AngularFireModule.initializeApp(environment.firebase, 'my-app-name'),
     BrowserModule,AngularFireDatabaseModule,MultiSelectModule,
     AppRoutingModule,AngularFirestoreModule,BrowserAnimationsModule,

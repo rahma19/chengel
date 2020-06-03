@@ -19,18 +19,11 @@
 
 </div>
 <div class="col-md-4 mb-3">
-<label for="validationServerUsername33">Application Acceptance</label>
+<label for="validationServerUsername33" style="color: white;">Application Acceptance</label>
 <div class="input-group">
  
-    <select class="btn btn-dark dropdown-toggle, selectt" name="date" [(ngModel)]="date">
-        <option value="" disabled selected>Choose your option</option>
-        <option value="3 days">3 days</option>
-        <option value="1 week">1 week</option>
-        <option value="2 weeks">2 weeks</option>
-        <option value="1 month">1 month</option>
-        <option value="termlessly">termlessly</option>
-      </select>
-  
+  <p-calendar name="date" [(ngModel)]="date"></p-calendar>
+ 
  
 </div>
 </div>
@@ -135,8 +128,8 @@ You must agree before submitting.
       </div>
     </div>
   </div>
-</div>
-<input id="time" name="time" type="hidden"/>
+</div>				
+<input id="time" name="time" type="hidden" [(ngModel)]="time"/>
 </form></div>
 <!-- [disabled]="f.invalid"-->
 
