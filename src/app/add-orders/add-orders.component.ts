@@ -65,7 +65,7 @@ export class AddOrdersComponent implements OnInit {
 
     })
   }
-  ngOnInit() { }
+  
 
  
  
