@@ -17,7 +17,7 @@ export class AddOrdersComponent implements OnInit {
   date="";
   domaine="";
   price=0;
-  time= new Date().toJSON().slice(0,10).replace(/-/g,'/');
+  time= new Date().toJSON();
   name="";
   mail="";
 
