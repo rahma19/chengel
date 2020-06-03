@@ -30,6 +30,7 @@ import { DetailComponent } from './detail/detail.component';
 import { FooterComponent } from './footer/footer.component'; 
 import { DatePipe } from '@angular/common';
 import {CalendarModule} from 'primeng/calendar';
+import {MessagesModule} from 'primeng/messages';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import {CalendarModule} from 'primeng/calendar';
     FooterComponent
   ],
   imports: [    
-    TableModule,PaginatorModule,CalendarModule,
+    TableModule,PaginatorModule,CalendarModule,MessagesModule,
     AngularFireModule.initializeApp(environment.firebase, 'my-app-name'),
     BrowserModule,AngularFireDatabaseModule,MultiSelectModule,
     AppRoutingModule,AngularFirestoreModule,BrowserAnimationsModule,

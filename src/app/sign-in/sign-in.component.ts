@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { DatePipe } from '@angular/common';
+import { Message } from 'primeng/api/message';
 
 
 @Component({
@@ -14,6 +15,8 @@ export class SignInComponent implements OnInit {
   password="";
   address="";
   role="";
+  msgs: Message[] = [];
+
   date=new Date();
   
   constructor(private db:AngularFireDatabase,public datepipe: DatePipe) { }
@@ -28,8 +31,8 @@ export class SignInComponent implements OnInit {
      password:f.password,
      date:f.date,
      address:f.address,
-     //role:f.bt
          });
+         this.msgs = [{severity:'info', summary:'confirmed', detail:'Freelancer Submited'}]; 
    }
    else{
     this.db.list('customer').push({
@@ -37,8 +40,9 @@ export class SignInComponent implements OnInit {
      password:f.password,
      date:f.date,
      address:f.address,
-     //role:f.bt
          });
+         this.msgs = [{severity:'info', summary:'confirmed', detail:'Customer Submited'}];
+
    }
    
   }
