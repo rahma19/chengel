@@ -12,8 +12,7 @@ Registered on the site 8 months
 <div style="padding:10px ;">
     <h5>{{y?.title}}</h5>
     <strong style="padding-top:10px ;font-size: 15px;"><i class="far fa-calendar-alt"></i>
-        Offers accepted before 15.06.2020 </strong> 
-               <p-calendar name="date" (click)="clk()" [(ngModel)]="date"></p-calendar>
+        Offers accepted before {{y.date}} </strong> 
 
     <p style="padding:10px ;">{{ y?.des }}</p>
 </div>
@@ -23,9 +22,9 @@ Registered on the site 8 months
         <i style="font-size: 20px;padding: 10px;" class="fas fa-briefcase"></i>One-time order  
     </strong>
     <strong style="font-size: 15px;padding: 10px;border-right: 2px solid rgb(215, 227, 248);color:gray;">
-        <i style="font-size: 20px;padding: 10px;" class="far fa-clock"></i>Yesterday  
+        <i style="font-size: 20px;padding: 10px;" class="far fa-clock"></i>since {{y.time}}  
     </strong>
-    <strong style="font-size: 15px;padding: 10px;color:gray;"><i style="font-size: 20px;padding: 10px;" class=" fas fa-calendar-alt"></i> {{y?.date}} </strong>
+    <strong style="font-size: 15px;padding: 10px;color:gray;"><i style="font-size: 20px;padding: 10px;" class=" fas fa-calendar-alt"></i> until {{y?.date}} </strong>
 </div>
 </div>
 

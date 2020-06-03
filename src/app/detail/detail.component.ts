@@ -18,11 +18,7 @@ export class DetailComponent implements OnInit {
     this.router.navigate(['/jobOrders']);
   }
 
-  clk(){
-    var x=this.datepipe.transform(this.date, 'yyyy-MM-dd');
-    console.log(x);
-
-  }
+  
 
   SignContract(){
     this.router.navigate(['/signContract']);

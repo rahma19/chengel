@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { NgForm } from '@angular/forms';
 import { DataService } from '../data.service';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -17,11 +18,11 @@ export class AddOrdersComponent implements OnInit {
   date="";
   domaine="";
   price=0;
-  time= new Date().toJSON();
+  time= new Date();
   name="";
   mail="";
 
-  constructor(private db:AngularFireDatabase,private dataService:DataService) { 
+  constructor(private db:AngularFireDatabase,private dataService:DataService,private datepipe:DatePipe) { 
     this.domaines= [
       {dmn: 'Web Development'},
       {dmn: 'Design'},
@@ -38,7 +39,9 @@ export class AddOrdersComponent implements OnInit {
  showSuccess(form:NgForm){
     console.log(form.value);
   var  f=form.value;
-    this.dataService.insertOrder(f.value); 
+  f.date=this.datepipe.transform(f.date, 'yyyy-MM-dd');
+  f.time=this.datepipe.transform(f.time, 'yyyy-MM-dd');
+  console.log(f.value);
    this.db.list('orders').push({
       title:f.title,
      des:f.des,
