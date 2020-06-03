@@ -12,22 +12,21 @@ import { DatePipe } from '@angular/common';
 export class DetailComponent implements OnInit {
   id:any;
   y:Order;
-  date: Date;
+
   constructor(private router:Router,private activatedRoute:ActivatedRoute,private dataService:DataService,public datepipe: DatePipe) { }
- jobOrders(){
+ 
+  jobOrders(){
     this.router.navigate(['/jobOrders']);
   }
-
-  
 
   SignContract(){
     this.router.navigate(['/signContract']);
   }
+
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.params['key'];
     var x= this.dataService.getUser();
 x.snapshotChanges().subscribe(item=>{
-  //this.y=[];
   item.forEach(element=>{
    var y=element.payload.toJSON();
    if (element.key==this.id)
@@ -35,7 +34,6 @@ x.snapshotChanges().subscribe(item=>{
       this.y=y;
     }
   } );
-  console.log(this.y.name);
 });
   }
 

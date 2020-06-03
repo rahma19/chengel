@@ -3,6 +3,7 @@ import { AngularFireDatabase } from '@angular/fire/database';
 import { NgForm } from '@angular/forms';
 import { DataService } from '../data.service';
 import { DatePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,7 +23,7 @@ export class AddOrdersComponent implements OnInit {
   name="";
   mail="";
 
-  constructor(private db:AngularFireDatabase,private dataService:DataService,private datepipe:DatePipe) { 
+  constructor(private router:Router,private db:AngularFireDatabase,private dataService:DataService,private datepipe:DatePipe) { 
     this.domaines= [
       {dmn: 'Web Development'},
       {dmn: 'Design'},
@@ -37,11 +38,9 @@ export class AddOrdersComponent implements OnInit {
 
 
  showSuccess(form:NgForm){
-    console.log(form.value);
   var  f=form.value;
   f.date=this.datepipe.transform(f.date, 'yyyy-MM-dd');
   f.time=this.datepipe.transform(f.time, 'yyyy-MM-dd');
-  console.log(f.value);
    this.db.list('orders').push({
       title:f.title,
      des:f.des,
@@ -52,20 +51,10 @@ export class AddOrdersComponent implements OnInit {
      name:f.name,
      time:f.time,
          });
-
+         this.router.navigate(['/jobOrders']);
   }
 
-  ngOnInit() {
-  
-  /* this.db.list('orders').push({
-      title:'marketing',
-      price:1200,
-      description:'blzvhj',
-      date:'3 days',
-
-
-    })*/
-  }
+  ngOnInit() { }
 
  
  
