@@ -17,7 +17,7 @@ export class AddOrdersComponent implements OnInit {
   date="";
   domaine="";
   price=0;
-
+  time= new Date().toJSON().slice(0,10).replace(/-/g,'/');
   name="";
   mail="";
 
@@ -35,27 +35,30 @@ export class AddOrdersComponent implements OnInit {
   }
  showSuccess(form:NgForm){
     console.log(form.value);
-   var  f=form.value;
-    //this.dataService.insertOrder(f.value); 
-  /* this.db.list('orders').push({
+  var  f=form.value;
+    this.dataService.insertOrder(f.value); 
+   this.db.list('orders').push({
       title:f.title,
      des:f.des,
      date:f.date,
      domaine:f.domaine,
      price:f.price,
      mail:f.mail,
-     name:f.name
-         });*/
+     name:f.name,
+     time:f.time,
+         });
 
   }
 
   ngOnInit() {
-   /* this.db.list('orders').push({
+   this.db.list('orders').push({
       title:'marketing',
       price:1200,
       description:'blzvhj',
-      date:'3 days'
-    })*/
+      date:'3 days',
+
+
+    })
   }
 
  
