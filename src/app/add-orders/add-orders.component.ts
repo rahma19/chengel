@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { NgForm } from '@angular/forms';
 import { DataService } from '../data.service';
+import { DatePipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,11 +19,11 @@ export class AddOrdersComponent implements OnInit {
   date="";
   domaine="";
   price=0;
-  time= new Date().toJSON();
+  time= new Date();
   name="";
   mail="";
 
-  constructor(private db:AngularFireDatabase,private dataService:DataService) { 
+  constructor(private router:Router,private db:AngularFireDatabase,private dataService:DataService,private datepipe:DatePipe) { 
     this.domaines= [
       {dmn: 'Web Development'},
       {dmn: 'Design'},
@@ -36,9 +38,9 @@ export class AddOrdersComponent implements OnInit {
 
 
  showSuccess(form:NgForm){
-    console.log(form.value);
   var  f=form.value;
-    this.dataService.insertOrder(f.value); 
+  f.date=this.datepipe.transform(f.date, 'yyyy-MM-dd');
+  f.time=this.datepipe.transform(f.time, 'yyyy-MM-dd');
    this.db.list('orders').push({
       title:f.title,
      des:f.des,
@@ -49,9 +51,10 @@ export class AddOrdersComponent implements OnInit {
      name:f.name,
      time:f.time,
          });
-
+         this.router.navigate(['/jobOrders']);
   }
 
+<<<<<<< HEAD
   ngOnInit() {
    this.db.list('orders').push({
       title:'marketing',
@@ -63,6 +66,9 @@ export class AddOrdersComponent implements OnInit {
     })
 
   }
+=======
+  ngOnInit() { }
+>>>>>>> 540adcd0c99605143cd3323f48db4672bd10f0d2
 
  
  

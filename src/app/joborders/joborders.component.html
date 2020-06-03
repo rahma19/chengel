@@ -15,12 +15,12 @@
         <div style="padding: 10px;">
             Specializations
             <select class="form-control" (change)="tt.filterGlobal($event.target.value, 'contains')" [(ngModel)]="selDmn" >
-                <option *ngFor="let t of hehe" value="{{ t.domaine.dmn }}" style="width: 450px;">{{ t.domaine.dmn }}</option>
+                <option *ngFor="let t of orders" [selected]="t.domaine.dmn" value="{{ t.domaine.dmn }}" style="width: 450px;">{{ t.domaine.dmn }}</option>
             </select>       
             <hr class="hr-light">
             Price
-            <select class="form-control" (change)="tt.filterGlobal($event.target.value, 'contains')" [(ngModel)]="hehe.price">
-                <option *ngFor="let t of hehe" value="{{ t.price }}" style="width: 450px;" >{{ t.price }}</option>
+            <select class="form-control" (change)="tt.filterGlobal($event.target.value, 'contains')" [(ngModel)]="prc">
+                <option [selected]="t.price" *ngFor="let t of orders" value="{{ t.price }}" style="width: 450px;" >{{ t.price }}</option>
             </select> 
         </div>
     </div>
@@ -35,8 +35,8 @@
                </p>  
             </div>
         <hr class="hr-light">
-        <h4 class="flex-item" style="margin-left: 25px;">Found {{hehe.length}} orders</h4>  
-        <p-table #tt [columns]="cols" [value]="hehe" [globalFilterFields]="['title','domaine.dmn','price']" [paginator]="true" [rows]="2"  [totalRecords]="120" [rowsPerPageOptions]="[5,10,25,50,100]">
+        <h4 class="flex-item" style="margin-left: 25px;">Found {{orders.length}} orders</h4>  
+        <p-table #tt [columns]="cols" [value]="orders" [globalFilterFields]="['title','domaine.dmn','price']" [paginator]="true" [rows]="5"  [totalRecords]="120" [rowsPerPageOptions]="[5,10,25,50,100]" [showCurrentPageReport]="true">
             <ng-template pTemplate="body" let-t let-expanded="expanded" let-columns="columns"  style="border: 1px solid rgb(215, 227, 248);margin: 20px;padding: 20px;border-radius: 20px;">
                 <tr>
                   <td style="margin: 20px;padding: 20px;">
