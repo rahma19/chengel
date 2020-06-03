@@ -10,6 +10,7 @@ import { Order } from './order';
 export class DataService {
   restlist:AngularFireList<any>;
   user:AngularFireList<any>;
+  customer:AngularFireList<any>;
   constructor(private friebase: AngularFireDatabase,private db:AngularFirestore,private rdb:AngularFireDatabase) { }
   orderslist:AngularFireList<any>;
   
@@ -21,6 +22,11 @@ export class DataService {
    this.user=this.friebase.list('/orders');
   return this.user;
 
+ }
+
+ getCust(){
+  this.customer=this.friebase.list('/customer');
+  return this.customer;
  }
   
   insertOrder(f:Order){

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -15,10 +16,12 @@ export class SignInComponent implements OnInit {
   role="";
   date=new Date();
   
-  constructor(private db:AngularFireDatabase) { }
+  constructor(private db:AngularFireDatabase,public datepipe: DatePipe) { }
  
   showSuccess(form:NgForm){
    var f=form.value;
+   f.date =this.datepipe.transform(f.date, 'yyyy-MM-dd');
+
    if(f.bt=="freelancer"){
     this.db.list('freelancer').push({
       user:f.user,

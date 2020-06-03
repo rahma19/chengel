@@ -28,6 +28,7 @@ import {TableModule} from 'primeng/table';
 import { PaginatorModule } from 'primeng/paginator';
 import { DetailComponent } from './detail/detail.component';
 import { FooterComponent } from './footer/footer.component'; 
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,AngularFireStorageModule,AngularFireAuthModule,
     ScrollingModule,DropdownModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

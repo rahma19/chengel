@@ -33,6 +33,8 @@ export class AddOrdersComponent implements OnInit {
       {dmn: 'Architecture'},
     ]
   }
+
+
  showSuccess(form:NgForm){
     console.log(form.value);
    var  f=form.value;
@@ -50,12 +52,7 @@ export class AddOrdersComponent implements OnInit {
   }
 
   ngOnInit() {
-   /* this.db.list('orders').push({
-      title:'marketing',
-      price:1200,
-      description:'blzvhj',
-      date:'3 days'
-    })*/
+  
   }
 
  
