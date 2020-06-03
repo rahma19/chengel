@@ -19,7 +19,7 @@
 
 </div>
 <div class="col-md-4 mb-3">
-<label for="validationServerUsername33" style="color: white;">Application Acceptance</label>
+<label for="validationServerUsername33" style="color: black;">Application Acceptance</label>
 <div class="input-group">
  
   <p-calendar name="date" [(ngModel)]="date"></p-calendar>
@@ -34,11 +34,7 @@
 <select class="btn btn-dark dropdown-toggle, selectt" name="domaine" [(ngModel)]="domaine">
   <option *ngFor="let c of domaines" [ngValue]="c">{{c.dmn}}</option>
 </select>
-
-
 </div>
-
-
 </div>
 <div>
 
@@ -59,8 +55,13 @@
   <div class="col-md-4 mb-3">
   <label for="mail">Email</label>
   <input type="text" class="form-control" id="mail" placeholder="Email" name="mail" [(ngModel)]="mail"
-    required #email="ngModel">
-    <div *ngIf="email.invalid && email.dirty" class="alert alert-danger">Email invalid</div>
+    required #email="ngModel" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+    <div [hidden]="!email.errors?.required || email.pristine"
+    class="alert alert-danger">
+    Email is required
+    </div>
+    <div *ngIf="email.errors?.pattern" class="alert alert-danger">
+    invalid pattern  </div>
 </div>
 </div>
 
@@ -85,28 +86,12 @@
 You must agree before submitting.
 </div>
 </div>
-<button type="submit"  class="boutton" data-toggle="modal" data-target="#myModal">Add Order</button>
-<div class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog">
+<button type="submit"  class="boutton" data-toggle="modal" data-target="#myModal" [disabled]="f.invalid">Add Order</button>
+
   
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Order Submitted</h4>
-      </div>
-      <div class="modal-body">
-        <p>You have successfully submitted.</p>
-      </div>
-      <div class="modal-footer">
-        <a type="button" class="btn btn-default" data-dismiss="modal" routerLinkActive="actif" [routerLink]="['/jobOrders']">Close</a>
-      </div>
-    </div>
-  </div>
-</div>				
-<input id="time" name="time" type="hidden" [(ngModel)]="time"/>
+   
 </form></div>
-<!-- [disabled]="f.invalid"-->
+
 
 
 
