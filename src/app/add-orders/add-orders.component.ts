@@ -17,7 +17,7 @@ export class AddOrdersComponent implements OnInit {
   date="";
   domaine="";
   price=0;
-
+  time= new Date().toJSON();
   name="";
   mail="";
 
@@ -37,8 +37,8 @@ export class AddOrdersComponent implements OnInit {
 
  showSuccess(form:NgForm){
     console.log(form.value);
-   var  f=form.value;
-    //this.dataService.insertOrder(f.value); 
+  var  f=form.value;
+    this.dataService.insertOrder(f.value); 
    this.db.list('orders').push({
       title:f.title,
      des:f.des,
@@ -46,13 +46,25 @@ export class AddOrdersComponent implements OnInit {
      domaine:f.domaine,
      price:f.price,
      mail:f.mail,
-     name:f.name
+     name:f.name,
+     time:f.time,
          });
 
   }
 
   ngOnInit() {
+<<<<<<< HEAD
   
+=======
+   this.db.list('orders').push({
+      title:'marketing',
+      price:1200,
+      description:'blzvhj',
+      date:'3 days',
+
+
+    })
+>>>>>>> 456eeb9f76afb3dd4e51d7ac00a1d1ed5d035164
   }
 
  

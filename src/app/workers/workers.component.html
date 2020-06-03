@@ -89,18 +89,18 @@
                 <tr>
                   <th>Name</th>
                   <th>Title</th>
-                  <th>Price</th>
+                  
                   <th>Details</th>
                  
                 </tr>
                 
                 <tr *ngFor="let i of users | async">
                     <!--<ng-container *ngIf="i.spec=='freelancer'" >-->
-                    <td>{{i.name}}</td>
-                    <td>{{i.title}}</td>
-                    <td>{{i.price}}</td>
+                    <td>{{i.user}}</td>
+                    <td>{{i.role}}</td>
+                    
                     <td>
-                        <a [routerLink]="[i.name]"><button class="btn btn-primary" >Details</button></a>
+                        <a [routerLink]="[i.user]"><button class="btn btn-primary" >Details</button></a>
                     </td>
                <!-- </ng-container>-->
                 </tr>
