@@ -28,7 +28,7 @@ export class SignInComponent implements OnInit {
      password:f.password,
      date:f.date,
      address:f.address,
-     role:f.bt
+     //role:f.bt
          });
    }
    else{
@@ -37,7 +37,7 @@ export class SignInComponent implements OnInit {
      password:f.password,
      date:f.date,
      address:f.address,
-     role:f.bt
+     //role:f.bt
          });
    }
    

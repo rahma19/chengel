@@ -53,18 +53,15 @@ export class AddOrdersComponent implements OnInit {
   }
 
   ngOnInit() {
-<<<<<<< HEAD
   
-=======
-   this.db.list('orders').push({
+  /* this.db.list('orders').push({
       title:'marketing',
       price:1200,
       description:'blzvhj',
       date:'3 days',
 
 
-    })
->>>>>>> 456eeb9f76afb3dd4e51d7ac00a1d1ed5d035164
+    })*/
   }
 
  

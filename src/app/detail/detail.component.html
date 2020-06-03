@@ -12,7 +12,9 @@ Registered on the site 8 months
 <div style="padding:10px ;">
     <h5>{{y?.title}}</h5>
     <strong style="padding-top:10px ;font-size: 15px;"><i class="far fa-calendar-alt"></i>
-        Offers accepted before 15.06.2020 </strong>
+        Offers accepted before 15.06.2020 </strong> 
+               <p-calendar name="date" (click)="clk()" [(ngModel)]="date"></p-calendar>
+
     <p style="padding:10px ;">{{ y?.des }}</p>
 </div>
 <hr class="hr-light"> 
