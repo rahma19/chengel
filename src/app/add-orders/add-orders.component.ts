@@ -53,6 +53,7 @@ export class AddOrdersComponent implements OnInit {
          });
          this.router.navigate(['/jobOrders']);
   }
+<<<<<<< HEAD
   ngOnInit() {
       }
 
@@ -64,3 +65,19 @@ export class AddOrdersComponent implements OnInit {
   
 
 }
+=======
+
+
+  ngOnInit() {
+
+   this.db.list('orders').push({
+      title:'marketing',
+      price:1200,
+      description:'blzvhj',
+      date:'3 days',
+
+
+    })
+  }
+  }
+>>>>>>> 7b8831e646e1339e36bdf7e73bd7ae3450e5f96f
